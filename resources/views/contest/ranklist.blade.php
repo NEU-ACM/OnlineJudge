@@ -15,6 +15,13 @@
 			if(problemLength > maxShowProblemLength) {
 				$('#contest-ranklist-table-responsive').css('overflow-x', 'scroll');
 			}
+			var problem_shorttitles = new Array ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
+			var titleCount = 0;
+			for( var i = 0;i < problemLength;i++){
+				var titleItem = problem_shorttitles[i];
+				$('#title_'+titleCount).append(titleItem);
+				titleCount++;
+			}
 		})
 	</script>
 </head>
@@ -49,11 +56,19 @@
 				<!-- <th class="text-center" id="contest-ranklist-solve">Solve</th> -->
 				<th class="text-center" id="contest-ranklist-solve">Score</th>
 				<th class="text-center" id="contest-ranklist-penalty">Penalty</th>
-				@foreach($problems as $problem)
-					<th class="text-center contest-ranklist-problem">
-						{{ $problem->problem_title }}
-					</th>
-				@endforeach
+				<?php
+				$titleCount = 0;
+				foreach($problems as $problem)
+					$titleCount++;
+				?>
+				<?php
+					for($i=0;$i<$titleCount;$i++)
+					{
+				?>
+					<th class="text-center contest-ranklist-problem" id="title_<?php echo $i?>"> </th>
+				<?php
+					}
+				?>
 			</thead>
 				@foreach($users as $user)
 					<tr class="front-table-row">
