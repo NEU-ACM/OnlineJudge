@@ -16,7 +16,7 @@
             <li id="dashboard_system"><a href="/dashboard/system">SystemInfo</a></li>
             <li id="dashboard_training"><a href="/dashboard/training">Training</a></li>
             {{--<li class="separate-item"></li>--}}
-            <li><a href="#">Executables</a></li>
+            <li id="dashboard_executable"><a href="#">Executables</a></li>
             <li><a href="#">Language</a></li>
             <li><a id="dashboard_users" href="/dashboard/users">Users</a></li>
         @endif
