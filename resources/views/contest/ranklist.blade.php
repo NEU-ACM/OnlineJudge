@@ -16,7 +16,7 @@
 				$('#contest-ranklist-table-responsive').css('overflow-x', 'scroll');
 			}
 			var problem_shorttitles = new Array ('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
-			var titleCount = 0;
+			var titleCount = 1;
 			for( var i = 0;i < problemLength;i++){
 				var titleItem = problem_shorttitles[i];
 				$('#title_'+titleCount).append(titleItem);
@@ -56,6 +56,7 @@
 				<!-- <th class="text-center" id="contest-ranklist-solve">Solve</th> -->
 				<th class="text-center" id="contest-ranklist-solve">Score</th>
 				<th class="text-center" id="contest-ranklist-penalty">Penalty</th>
+<<<<<<< HEAD
 				<?php
 				$titleCount = 0;
 				foreach($problems as $problem)
@@ -69,6 +70,15 @@
 				<?php
 					}
 				?>
+=======
+				@foreach($problems as $problem)
+				<th class="text-center contest-ranklist-problem">
+					<a  href="/contest/{{ $contest_id }}/problem/{{ $problem->contest_problem_id }}">
+						<div id="title_{{ $problem->contest_problem_id }}"></div>
+					</a>
+				</th>
+				@endforeach
+>>>>>>> 5caa9ad... change to short title
 			</thead>
 				@foreach($users as $user)
 					<tr class="front-table-row">
